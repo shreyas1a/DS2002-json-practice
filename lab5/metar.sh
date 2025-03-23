@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Gathering data" 
 curl -sL "https://aviationweather.gov/api/data/metar?ids=KMCI&format=json&taf=f$
 times=$(jq -r '.[].receiptTime' data.json | head -n 6)
 echo "$times"
